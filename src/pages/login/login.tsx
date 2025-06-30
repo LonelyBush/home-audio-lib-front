@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export const Login = () => {
     return (
-    <div className="flex flex-col gap-y-5 container mx-auto p-5 max-w-120 rounded-md shadow-md bg-sky-50">
+    <div className="flex self-center flex-col gap-y-5 container mx-auto p-5 max-w-120 rounded-md shadow-md bg-sky-50">
     <h3 className="text-3xl font-semibold font-sans text-indigo-500 text-center">Login</h3>
     <form className={"flex flex-col gap-y-5"}>
         <Input id="login" name="login" label="Login" type="text" placeholder="Enter your login" />

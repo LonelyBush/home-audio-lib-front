@@ -28,10 +28,12 @@ export default function RootLayout({
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex flex-col align-center justify-between antialiased w-screen h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} flex flex-col align-center antialiased w-screen h-screen`}
       >
         <Header />
-        {children}
+        <main className="flex h-full">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
