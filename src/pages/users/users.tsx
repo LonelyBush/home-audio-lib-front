@@ -1,5 +1,5 @@
 import { UserCard } from "@/entities/user/user";
-import { User } from "@/lib/types/types";
+import { User } from "@/core/types/types";
 
 
 export const Users = () => {

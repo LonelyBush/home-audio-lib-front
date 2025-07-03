@@ -1,4 +1,4 @@
-import { User } from "@/lib/types/types"
+import { User } from "@/core/types/types"
 import { UserIcon } from "@/shared/svgs/UserIcon"
 
 export const UserCard = ({login, id, favorites}: User) => {
