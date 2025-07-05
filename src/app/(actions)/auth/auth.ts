@@ -1,7 +1,6 @@
 "use server"
 
-import { cookies } from "next/headers";
-import { createSession } from "../cookies/cookies";
+import { createSession, getJWTToken } from "../cookies/cookies";
 
 const {NEXT_PUBLIC_BASE_API_URL} = process.env
 
@@ -19,8 +18,7 @@ export const login = async (formData: {login: string, password: string}) => {
             await createSession({access_token: result.accessToken, refresh_token: result.refreshToken});
             return result
         }
-        const result = await response.json();
-        return result;
+        return await response.json();
 
         }catch(err) {
             console.error(err);
@@ -45,20 +43,24 @@ export const signup = async (formData: {login: string, password: string}) => {
 }
 
 export const refreshAccessToken = async () => {
-    const cookieStore = await cookies();
-    const refreshToken = cookieStore.get('refresh_token');
     try {
-    const response = await fetch(`${NEXT_PUBLIC_BASE_API_URL ?? 'http://localhost:4000'}/auth/refresh`, {
+    const {refresh_token} = await getJWTToken();
+    if(refresh_token){
+        const response = await fetch(`${NEXT_PUBLIC_BASE_API_URL ?? 'http://localhost:4000'}/auth/refresh`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
             },
-        body: JSON.stringify({refreshToken: refreshToken}),
+        body: JSON.stringify({refreshToken: refresh_token}),
     })
         const result = await response.json();
         await createSession({access_token: result.accessToken, refresh_token: result.refreshToken});
         return result
+    }else {
+        throw new Error('Refresh Token expired');
+    }
     } catch(err) {
         console.error(err);
     }
 }
+

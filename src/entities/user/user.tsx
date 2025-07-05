@@ -1,3 +1,5 @@
+'use client'
+
 import { User } from "@/core/types/types"
 import { UserIcon } from "@/shared/svgs/UserIcon"
 

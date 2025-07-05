@@ -21,3 +21,10 @@ export const deleteSession = async () => {
     cookieStore.delete('access_token');
     cookieStore.delete('refresh_token');
 }
+
+export async function getJWTToken() {
+  return {
+    refresh_token: (await cookies()).get('refresh_token')?.value || '',
+    access_token: (await cookies()).get('access_token')?.value || '',
+  };
+}

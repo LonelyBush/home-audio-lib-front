@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/shared/footer/footer";
 import { Header } from "@/shared/header/header";
+import StoreProvider from "@/core/redux/storeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +31,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col align-center antialiased w-screen h-screen`}
       >
-        <Header />
-        <main className="flex h-full">
-          {children}
-        </main>
+        <StoreProvider>
+          <Header />
+            <main className="flex h-full">
+              {children}
+            </main>
         <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

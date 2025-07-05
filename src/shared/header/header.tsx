@@ -21,16 +21,16 @@ const [isShowMenu, setShowMenu] = useState<boolean>(false);
             <h1 className="text-3xl font-sans text-indigo-500">Audio<span className="font-normal text-black" font-semibold>Lib</span></h1>
             <nav className="hidden md:flex justify-self-start">
                 <ul className="flex items-center gap-x-3">
-                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-semi hover:underline hover:underline-offset-2 text-xl" href="/">Home</Link></li>
-                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-semi hover:underline hover:underline-offset-2 text-xl" href="/">Tracks</Link></li>
-                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-semi hover:underline hover:underline-offset-2 text-xl" href="/">Albums</Link></li>
-                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-semi hover:underline hover:underline-offset-2 text-xl" href="/">Artists</Link></li>
-                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-semi hover:underline hover:underline-offset-2 text-xl" href="/">Music</Link></li>
+                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-bold hover:underline hover:underline-offset-2 text-xl" href="/">Home</Link></li>
+                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-bold hover:underline hover:underline-offset-2 text-xl" href="/">Tracks</Link></li>
+                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-bold hover:underline hover:underline-offset-2 text-xl" href="/">Albums</Link></li>
+                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-bold hover:underline hover:underline-offset-2 text-xl" href="/">Artists</Link></li>
+                    <li><Link className="transition-all ease-in hover:text-indigo-600 hover:font-bold hover:underline hover:underline-offset-2 text-xl" href="/">Music</Link></li>
                 </ul>
             </nav>
         </div>
         <div className="hidden md:flex gap-3 items-center">
-            <Link className="transition-all ease-in hover:text-indigo-600 hover:font-semi hover:underline hover:underline-offset-2 text-xl" href="/">LonelyBush</Link>
+            <Link className="transition-all ease-in hover:text-indigo-600 hover:font-bold hover:underline hover:underline-offset-2 text-xl" href="/">LonelyBush</Link>
             <Button type="button">Logout</Button>
         </div>
         <div className="lg:hidden md:hidden flex gap-3 items-center">
